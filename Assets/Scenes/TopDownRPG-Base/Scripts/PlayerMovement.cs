@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!GameManager.IsRunning) return;
         WASD_Move();
     }
 
@@ -34,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
         {
             moveSpeed = stats.baseMoveSpeed;
         }
-
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(horizontal * moveSpeed * Time.deltaTime, vertical * moveSpeed * Time.deltaTime));
     }
 
